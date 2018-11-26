@@ -1,20 +1,15 @@
-# import pyfbsdk as fb
-# import pyfbsdk_additions as fba
-
-# import sys
-# from PyQt4 import QtGui
+# =========================================================== # 
+# Name: Mandl
+# Description: 
+# Simple Python 8-ball script to decide where to go for lunch
+# Updated: 26 Nov 2018
+# =========================================================== # 
 
 import random as rand
+import json
 
-# app = QtGui.QApplication(sys.argv)
 
-# window = QtGui.QWidget()
-# window.setGeometry(0,0,500,300)
-# window.setWindowTitle("Where To Eat!")
-
-# # define buttons
-# btnGenerous = fb.FBButton()
-# btnBroke = fb.FBButton()
+budget = input("Tell me your budget!")
 
 lFoodLocations = ["DailyCut",
                   "Subway", 
@@ -34,12 +29,11 @@ lCheapFoodLocations = ["Downstairs",
 
 def WhereToEat(pBudgetValue):
     if pBudgetValue <= 10:
+        # places that cost 10 or less
         lCheapListCount = lCheapFoodLocations[:-1]
         cheapnum = len(lCheapListCount)
         cheapPlaceRandomIdx = rand.randint(0,cheapnum)
         cheapLocation = lCheapFoodLocations[cheapPlaceRandomIdx]
-        # places that cost 10 or below
-        # fb.FBMessageBox("Eat Cheap la", cheapLocation, "lets go")
         print cheapLocation
 
     if pBudgetValue >= 11:
@@ -49,9 +43,5 @@ def WhereToEat(pBudgetValue):
         exPlaceRandomIdx = rand.randint(0,exnum)
         exLocation = lFoodLocations[exPlaceRandomIdx]
         print exLocation
-        # fb.FBMessageBox("Feeling Generous eh?", exLocation, "lets go")
 
-        # pass
-
-WhereToEat(5)
-# window.show()
+WhereToEat(budget)
