@@ -1,19 +1,23 @@
-# =========================================================== # 
+# =========================================================== #
 # Name: Mandl
-# Description: 
+# Description:
 # Simple Python 8-ball script to decide where to go for lunch
 # Updated: 26 Nov 2018
-# =========================================================== # 
+# =========================================================== #
 
 import random as rand
 import json
 
+budget = int(input("Tell me your budget in $!"))
 
-budget = input("Tell me your budget!")
+with open('locations.json')
+
+
+
 
 lFoodLocations = ["DailyCut",
-                  "Subway", 
-                  "Pho", 
+                  "Subway",
+                  "Pho",
                   "iSteaks",
                   "Carls Jr",
                   "FoodBarn",
@@ -34,7 +38,7 @@ def WhereToEat(pBudgetValue):
         cheapnum = len(lCheapListCount)
         cheapPlaceRandomIdx = rand.randint(0,cheapnum)
         cheapLocation = lCheapFoodLocations[cheapPlaceRandomIdx]
-        print cheapLocation
+        print(cheapLocation)
 
     if pBudgetValue >= 11:
         # places that cost 11 or more
@@ -42,6 +46,6 @@ def WhereToEat(pBudgetValue):
         exnum = len(lExListCount)
         exPlaceRandomIdx = rand.randint(0,exnum)
         exLocation = lFoodLocations[exPlaceRandomIdx]
-        print exLocation
+        print(exLocation)
 
 WhereToEat(budget)
