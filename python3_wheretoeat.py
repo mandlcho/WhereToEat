@@ -37,33 +37,38 @@ lCheapFoodLocations = ["Downstairs",
 
 class WhereToEatApp(QtGui.QMainWindow, wheretoeatdesign.Ui_MainWindow):
     def __init__(self, parent=None):
-        global inputArg
         super(WhereToEatApp, self).__init__(parent)
-        self.setupUi(self)
-        self.btn_Tellme.clicked.connect(self.showDialog)
+
         # initialise the parser -------------------------------------------------------------------------*
         parser = argparse.ArgumentParser(description="Helps you decide on a place to eat if you cant!")
-        # this is where you add the additional / required arguments.
-        parser.add_argument('budget', type=int, nargs='?', help='budget input')
 
-        # Parse the args
-        args = vars(parser.parse_args())
+        parser.add_argument('budget', type=int, nargs='?', help='budget input')                         # this is where you add the additional / required arguments.
 
+        args = vars(parser.parse_args())                                                                # Parse the args
         print(args)
         inputArg = args['budget']
-        if inputArg:
-            self.WhereToEat(inputArg)
+        if inputArg is not None:
+            print(self.WhereToEat(inputArg))
+        else:
+            self.showUI()
+
         # -----------------------------------------------------------------------------------------------*
 
     def printHello(self):
         print('code is working')
 
+    def showUI(self):
+        self.setupUi(self)
+        self.btn_Tellme.clicked.connect(self.showDialog)
+        self.btn_Surpriseme.clicked.connect(self.SurpriseMe)
+
+    def updateUI(self, pOutput):
+        self.Le_showresult.setText(pOutput)
 
     def showDialog(self):
         pBudgetValue, UserInput = QtGui.QInputDialog.getInt(self,"Input Budget","Enter it here")
         if UserInput:
-            # print(pBudgetValue)
-            self.WhereToEat(pBudgetValue)
+            self.updateUI(self.WhereToEat(pBudgetValue))
 
     def WhereToEat(self, pBudgetValue):
         if pBudgetValue <= 10:
@@ -72,8 +77,7 @@ class WhereToEatApp(QtGui.QMainWindow, wheretoeatdesign.Ui_MainWindow):
             cheapnum = len(lCheapListCount)
             cheapPlaceRandomIdx = rand.randint(0, cheapnum)
             cheapLocation = lCheapFoodLocations[cheapPlaceRandomIdx]
-            # print(cheapLocation)
-            self.Le_showresult.setText(cheapLocation)
+            return cheapLocation
 
         if pBudgetValue >= 11:
             # places that cost 11 or more
@@ -81,8 +85,12 @@ class WhereToEatApp(QtGui.QMainWindow, wheretoeatdesign.Ui_MainWindow):
             exnum = len(lExListCount)
             exPlaceRandomIdx = rand.randint(0, exnum)
             exLocation = lFoodLocations[exPlaceRandomIdx]
-            # print(exLocation)
-            self.Le_showresult.setText(exLocation)
+            return exLocation
+
+    def SurpriseMe(self):
+        lMergedList = lCheapFoodLocations + lFoodLocations
+        for eachitem in lMergedList:
+            print(eachitem)
 
 def main():
     app = QtGui.QApplication(sys.argv)

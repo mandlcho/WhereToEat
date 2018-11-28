@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'wheretoeat.ui'
 #
-# Created: Wed Nov 28 14:08:46 2018
+# Created: Wed Nov 28 17:04:18 2018
 #      by: PyQt4 UI code generator 4.9.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -45,11 +45,18 @@ class Ui_MainWindow(object):
         self.btn_Tellme.setSizePolicy(sizePolicy)
         self.btn_Tellme.setObjectName(_fromUtf8("btn_Tellme"))
         self.verticalLayout_2.addWidget(self.btn_Tellme)
+        self.btn_Surpriseme = QtGui.QPushButton(self.frame)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_Surpriseme.sizePolicy().hasHeightForWidth())
+        self.btn_Surpriseme.setSizePolicy(sizePolicy)
+        self.btn_Surpriseme.setObjectName(_fromUtf8("btn_Surpriseme"))
+        self.verticalLayout_2.addWidget(self.btn_Surpriseme)
         self.Le_showresult = QtGui.QLineEdit(self.frame)
         self.Le_showresult.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.Le_showresult.setAlignment(QtCore.Qt.AlignCenter)
         self.Le_showresult.setReadOnly(True)
-        #self.Le_showresult.setColor()
         self.Le_showresult.setObjectName(_fromUtf8("Le_showresult"))
         self.verticalLayout_2.addWidget(self.Le_showresult)
         self.horizontalLayout.addLayout(self.verticalLayout_2)
@@ -63,5 +70,6 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "Where To Eat", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_Tellme.setText(QtGui.QApplication.translate("MainWindow", "Tell Me", None, QtGui.QApplication.UnicodeUTF8))
+        self.btn_Surpriseme.setText(QtGui.QApplication.translate("MainWindow", "Surprise Me", None, QtGui.QApplication.UnicodeUTF8))
         self.Le_showresult.setText(QtGui.QApplication.translate("MainWindow", "display result here", None, QtGui.QApplication.UnicodeUTF8))
 
