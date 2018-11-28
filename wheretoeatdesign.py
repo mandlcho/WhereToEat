@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'wheretoeat.ui'
 #
-# Created: Wed Nov 28 11:25:41 2018
+# Created: Wed Nov 28 14:08:46 2018
 #      by: PyQt4 UI code generator 4.9.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -45,6 +45,13 @@ class Ui_MainWindow(object):
         self.btn_Tellme.setSizePolicy(sizePolicy)
         self.btn_Tellme.setObjectName(_fromUtf8("btn_Tellme"))
         self.verticalLayout_2.addWidget(self.btn_Tellme)
+        self.Le_showresult = QtGui.QLineEdit(self.frame)
+        self.Le_showresult.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.Le_showresult.setAlignment(QtCore.Qt.AlignCenter)
+        self.Le_showresult.setReadOnly(True)
+        #self.Le_showresult.setColor()
+        self.Le_showresult.setObjectName(_fromUtf8("Le_showresult"))
+        self.verticalLayout_2.addWidget(self.Le_showresult)
         self.horizontalLayout.addLayout(self.verticalLayout_2)
         self.gridLayout.addWidget(self.frame, 0, 0, 1, 1)
         self.verticalLayout.addLayout(self.gridLayout)
@@ -56,4 +63,5 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "Where To Eat", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_Tellme.setText(QtGui.QApplication.translate("MainWindow", "Tell Me", None, QtGui.QApplication.UnicodeUTF8))
+        self.Le_showresult.setText(QtGui.QApplication.translate("MainWindow", "display result here", None, QtGui.QApplication.UnicodeUTF8))
 
