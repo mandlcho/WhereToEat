@@ -50,7 +50,7 @@ class WhereToEatApp(QtGui.QMainWindow, wheretoeatdesign.Ui_MainWindow):
     def showUI(self):
         self.setupUi(self)
         self.btn_Tellme.clicked.connect(self.showDialog)
-        self.btn_Surpriseme.clicked.connect(SurpriseMe)
+        self.btn_Surpriseme.clicked.connect(self.SurpriseMe)
 
     def updateUI(self, pOutput):
         self.Le_showresult.setText(pOutput)
@@ -59,6 +59,12 @@ class WhereToEatApp(QtGui.QMainWindow, wheretoeatdesign.Ui_MainWindow):
         pBudgetValue, UserInput = QtGui.QInputDialog.getInt(self,"Input Budget","Enter it here")
         if UserInput:
             self.updateUI(WhereToEat(pBudgetValue))
+
+    def SurpriseMe(self):
+        IRandomBudget = rand.randint(1, 25)
+        SurpriseLoc = WhereToEat(IRandomBudget)
+        print(SurpriseLoc)
+        self.updateUI(SurpriseLoc)
 
 
 def WhereToEat(pBudgetValue):
@@ -77,13 +83,6 @@ def WhereToEat(pBudgetValue):
         exPlaceRandomIdx = rand.randint(0, exnum)
         exLocation = lFoodLocations[exPlaceRandomIdx]
         return exLocation
-
-def SurpriseMe():
-    lMergedList = lCheapFoodLocations + lFoodLocations
-    for eachitem in lMergedList:
-        print(eachitem)
-
-
 
 def main():
     # initialise the parser -------------------------------------------------------------------------*
