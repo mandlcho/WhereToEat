@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'wheretoeat.ui'
 #
-# Created: Wed Nov 28 17:04:18 2018
+# Created: Sun Dec  2 16:39:27 2018
 #      by: PyQt4 UI code generator 4.9.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -46,14 +46,20 @@ class Ui_MainWindow(object):
         self.btn_Tellme.setObjectName(_fromUtf8("btn_Tellme"))
         self.verticalLayout_2.addWidget(self.btn_Tellme)
         self.btn_Surpriseme = QtGui.QPushButton(self.frame)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Minimum)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.btn_Surpriseme.sizePolicy().hasHeightForWidth())
         self.btn_Surpriseme.setSizePolicy(sizePolicy)
+        self.btn_Surpriseme.setMaximumSize(QtCore.QSize(227, 32))
+        self.btn_Surpriseme.setFlat(False)
         self.btn_Surpriseme.setObjectName(_fromUtf8("btn_Surpriseme"))
         self.verticalLayout_2.addWidget(self.btn_Surpriseme)
         self.Le_showresult = QtGui.QLineEdit(self.frame)
+        font = QtGui.QFont()
+        font.setItalic(True)
+        self.Le_showresult.setFont(font)
+        self.Le_showresult.setFocusPolicy(QtCore.Qt.NoFocus)
         self.Le_showresult.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.Le_showresult.setAlignment(QtCore.Qt.AlignCenter)
         self.Le_showresult.setReadOnly(True)
