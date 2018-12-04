@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'wheretoeat.ui'
 #
-# Created: Sun Dec  2 16:39:27 2018
+# Created: Tue Dec  4 13:02:19 2018
 #      by: PyQt4 UI code generator 4.9.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -17,12 +17,16 @@ except AttributeError:
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(279, 190)
+        MainWindow.resize(202, 158)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
+        MainWindow.setToolTip(_fromUtf8(""))
+        MainWindow.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
+        MainWindow.setTabShape(QtGui.QTabWidget.Triangular)
+        MainWindow.setUnifiedTitleAndToolBarOnMac(False)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.verticalLayout = QtGui.QVBoxLayout(self.centralwidget)
@@ -74,7 +78,7 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "Where To Eat", None, QtGui.QApplication.UnicodeUTF8))
+        MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "mWhereToEat", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_Tellme.setText(QtGui.QApplication.translate("MainWindow", "Tell Me", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_Surpriseme.setText(QtGui.QApplication.translate("MainWindow", "Surprise Me", None, QtGui.QApplication.UnicodeUTF8))
         self.Le_showresult.setText(QtGui.QApplication.translate("MainWindow", "display result here", None, QtGui.QApplication.UnicodeUTF8))

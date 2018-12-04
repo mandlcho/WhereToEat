@@ -2,7 +2,7 @@
 # Name: Mandl
 # Description:
 # Simple Python3 script to decide where to go for lunch
-# Updated: 28 Nov 2018
+# Updated: 4th Dec 2018
 # =========================================================== #
 
 import sys
@@ -15,7 +15,6 @@ from PyQt4 import QtCore,QtGui
 # argparse import for adding arguments : https://stackoverflow.com/questions/20063/whats-the-best-way-to-parse-command-line-arguments
 import argparse
 
-isArg = None
 
 # data ======================================================= #
 
@@ -26,14 +25,18 @@ lFoodLocations = ["DailyCut",
                   "Carls Jr",
                   "FoodBarn",
                   "TwoChefs",
-                  "Red"]
+                  "Red",
+                  "Bismillah Briyani",
+                  "Men Men Don Don",
+                  "Eighteen Chefs"]
 
 lCheapFoodLocations = ["Downstairs",
                        "Guest La Mian",
                        "Grass",
                        "Bread",
                        "Koufu",
-                       "FoodMaster"]
+                       "FoodMaster",
+                       "CoffeeHive"]
 
 # =========================================================== #
 
