@@ -2,6 +2,7 @@
 # Name: Mandl
 # Description:
 # Simple Python3 script to decide where to go for lunch
+# Comments? Feedback? http://github.com/mandlcho
 # Updated: 4th Dec 2018
 # =========================================================== #
 
