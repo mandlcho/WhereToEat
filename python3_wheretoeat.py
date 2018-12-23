@@ -28,16 +28,18 @@ lFoodLocations = ["DailyCut",
                   "TwoChefs",
                   "Red",
                   "Bismillah Briyani",
-                  "Men Men Don Don",
+                  "Omo Omo Don",
                   "Eighteen Chefs"]
 
-lCheapFoodLocations = ["Downstairs",
-                       "Guest La Mian",
+lCheapFoodLocations = ["Air",
                        "Grass",
+                       "Timbre+",
                        "Bread",
                        "Koufu",
                        "FoodMaster",
                        "CoffeeHive"]
+
+testLocationList = []
 
 # =========================================================== #
 
@@ -55,6 +57,7 @@ class WhereToEatApp(QtGui.QMainWindow, wheretoeatdesign.Ui_MainWindow):
         self.setupUi(self)
         self.btn_Tellme.clicked.connect(self.showDialog)
         self.btn_Surpriseme.clicked.connect(self.SurpriseMe)
+        self.btn_browse.clicked.connect(self.BrowseFile)
 
     def updateUI(self, pOutput):
         self.Le_showresult.setText(pOutput)
@@ -64,6 +67,21 @@ class WhereToEatApp(QtGui.QMainWindow, wheretoeatdesign.Ui_MainWindow):
         if UserInput:
             self.updateUI(WhereToEat(pBudgetValue))
 
+    def BrowseFile(self):
+        # https://www.youtube.com/watch?v=trklFGA1CKQ&feature=youtu.be
+        filePath = QtGui.QFileDialog.getOpenFileName(self,
+                                                     'Single File',
+                                                     "~/Users/Mandl/Desktop",
+                                                     '*.json')
+        print('filePath',filePath,'\n')
+        fileHandle = open(filePath,'r')
+        locationList = fileHandle.readlines()
+        print(fileHandle)
+        for eachline in locationList:
+            # print(eachline)
+            testLocationList.append(eachline)
+            print(len(testLocationList))
+
     def SurpriseMe(self):
         IRandomBudget = rand.randint(1, 25)
         SurpriseLoc = WhereToEat(IRandomBudget)
@@ -72,6 +90,10 @@ class WhereToEatApp(QtGui.QMainWindow, wheretoeatdesign.Ui_MainWindow):
 
 
 def WhereToEat(pBudgetValue):
+    if pBudgetValue == 0:
+        cheapLocation = lCheapFoodLocations[0]
+        return cheapLocation
+
     if pBudgetValue <= 10:
         # places that cost 10 or less
         lCheapListCount = lCheapFoodLocations[:-1]
