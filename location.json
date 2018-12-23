@@ -1,1 +1,23 @@
-{"locations": [{"budget": "$10", "name": "Koufu", "at": "Fusionopolis"}, {"budget": "$20", "name": "DailyCut", "at": "Galaxis"}, {"budget": "15", "name": "Foodmaster", "at": "Galaxis"}]}
+{
+  lFoodLocations: [
+    {
+    "c1":'koufu',
+    "c2":"DailyCut",
+    "c3":"Subway",
+    "c4":"Pho",
+    "c5":"iSteaks",
+    "c6":"Carls Jr",
+    "n7":"FoodBarn",
+    "n8":"TwoChefs",
+    "n9":"Red"]
+    }
+    ]
+
+lCheapFoodLocations = ["Downstairs",
+                       "Guest La Mian",
+                       "Grass",
+                       "Bread",
+                       "Koufu",
+                       "FoodMaster"]
+
+}

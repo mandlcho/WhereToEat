@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'wheretoeat.ui'
 #
-# Created: Sun Dec  2 16:39:27 2018
+# Created: Sat Dec 22 22:40:40 2018
 #      by: PyQt4 UI code generator 4.9.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -17,12 +17,16 @@ except AttributeError:
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(279, 190)
+        MainWindow.resize(311, 288)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
+        MainWindow.setToolTip(_fromUtf8(""))
+        MainWindow.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
+        MainWindow.setTabShape(QtGui.QTabWidget.Triangular)
+        MainWindow.setUnifiedTitleAndToolBarOnMac(False)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.verticalLayout = QtGui.QVBoxLayout(self.centralwidget)
@@ -45,8 +49,13 @@ class Ui_MainWindow(object):
         self.btn_Tellme.setSizePolicy(sizePolicy)
         self.btn_Tellme.setObjectName(_fromUtf8("btn_Tellme"))
         self.verticalLayout_2.addWidget(self.btn_Tellme)
+        self.gridLayout_2 = QtGui.QGridLayout()
+        self.gridLayout_2.setObjectName(_fromUtf8("gridLayout_2"))
+        self.btn_browse = QtGui.QToolButton(self.frame)
+        self.btn_browse.setObjectName(_fromUtf8("btn_browse"))
+        self.gridLayout_2.addWidget(self.btn_browse, 0, 0, 1, 1)
         self.btn_Surpriseme = QtGui.QPushButton(self.frame)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Ignored, QtGui.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.btn_Surpriseme.sizePolicy().hasHeightForWidth())
@@ -54,7 +63,8 @@ class Ui_MainWindow(object):
         self.btn_Surpriseme.setMaximumSize(QtCore.QSize(227, 32))
         self.btn_Surpriseme.setFlat(False)
         self.btn_Surpriseme.setObjectName(_fromUtf8("btn_Surpriseme"))
-        self.verticalLayout_2.addWidget(self.btn_Surpriseme)
+        self.gridLayout_2.addWidget(self.btn_Surpriseme, 0, 1, 1, 1)
+        self.verticalLayout_2.addLayout(self.gridLayout_2)
         self.Le_showresult = QtGui.QLineEdit(self.frame)
         font = QtGui.QFont()
         font.setItalic(True)
@@ -76,6 +86,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "Where To Eat", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_Tellme.setText(QtGui.QApplication.translate("MainWindow", "Tell Me", None, QtGui.QApplication.UnicodeUTF8))
+        self.btn_browse.setText(QtGui.QApplication.translate("MainWindow", "...", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_Surpriseme.setText(QtGui.QApplication.translate("MainWindow", "Surprise Me", None, QtGui.QApplication.UnicodeUTF8))
         self.Le_showresult.setText(QtGui.QApplication.translate("MainWindow", "display result here", None, QtGui.QApplication.UnicodeUTF8))
 
