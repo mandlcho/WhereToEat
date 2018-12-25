@@ -72,15 +72,16 @@ class WhereToEatApp(QtGui.QMainWindow, wheretoeatdesign.Ui_MainWindow):
         filePath = QtGui.QFileDialog.getOpenFileName(self,
                                                      'Single File',
                                                      "~/Users/Mandl/Desktop",
-                                                     '*.json')
+                                                     '*.txt')
         print('filePath',filePath,'\n')
         fileHandle = open(filePath,'r')
         locationList = fileHandle.readlines()
-        print(fileHandle)
+        testLocationList = []
         for eachline in locationList:
             # print(eachline)
             testLocationList.append(eachline)
-            print(len(testLocationList))
+        print(len(testLocationList))
+        print(testLocationList)
 
     def SurpriseMe(self):
         IRandomBudget = rand.randint(1, 25)
